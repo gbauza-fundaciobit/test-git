@@ -8,3 +8,8 @@ select 'b' from dual;
 
 select 'c' from dual;
 
+select 'd' from dual;
+
+select 'e' from dual;
+
+select 'f' from dual;
