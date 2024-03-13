@@ -4,4 +4,4 @@ dfdfdsf
 
 dfds
 
-api_key
+api_key = {}
