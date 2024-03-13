@@ -5,8 +5,3 @@ dfdfdsf
 dfds
 
 api_key
-
-{  "id": 0, 
-"titol": "curs Git", 
-"assistents": [ { "nom": "Aina", "edat": 30 }, {  "nom": "Pere", "edat": 45} ,]
-}
