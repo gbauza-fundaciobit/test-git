@@ -15,3 +15,5 @@ select 'e' from dual;
 select 'f' from dual;
 
 select 'g' from dual;
+
+select 'h' from dual;
