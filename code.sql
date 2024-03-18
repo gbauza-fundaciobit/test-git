@@ -18,3 +18,4 @@ select 'g' from dual;
 
 select 'h' from dual;
 
+select 'i' from dual;
