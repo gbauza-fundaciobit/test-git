@@ -13,7 +13,7 @@ jobs:
         run: sudo apt-get install unzip
         
       - name: Descomprimeix el fitxer zip
-        run: unzip -P ${{ secrets.ZIP_PASSWORD }} secret.zip
+        run: unzip -P ${{ secrets.ZIP_PWD }} secret.zip
         
       - name: Mostra el contingut de secret.txt
         run: cat secret.txt
