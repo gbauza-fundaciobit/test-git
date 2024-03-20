@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Mostram variables
-        run: echo "'${{ github.event_name }}' vs '${{ github.base_ref}}'"
+        run: echo "'${{ github.event_name }}' vs '${{ github.ref }}'"
 
       - name: Executa accions per push a main
-        if: ${{ github.event_name == 'push' && github.base_ref == 'refs/heads/main'}}
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
         run: echo "Aquesta passa s'executa només en fer push a la branca principal."
 
       - name: Executa accions per a pull request
@@ -17,5 +17,5 @@ jobs:
         run: echo "Aquesta passa s'executa només per a pull requests, independentment de la branca."
 
       - name: Executa accions per a pull request a main
-        if: ${{ github.event_name == 'pull_request' && github.base_ref == 'main'}}
+        if: ${{ github.event_name == 'pull_request' && github.ref == 'main'}}
         run: echo "Aquesta passa s'executa només per a pull requests dirigides a la branca principal."
