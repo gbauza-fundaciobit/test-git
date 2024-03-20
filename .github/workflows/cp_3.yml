@@ -1,5 +1,5 @@
 name: Cas pràctic 3
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} running cas pràctic 3
 on: [push, pull_request]
 jobs:
   push_o_pr:
