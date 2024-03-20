@@ -1,15 +1,19 @@
 name: Cas pràctic 6
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} executant cas pràctic 6 (ZIP amb secrets)
 on: workflow_dispatch
-env:
-  VARIABLE_2: Això és una variable de WF
+
 jobs:
-  Explore-GitHub-Actions:
+  descomprimir:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 Valor de la variable de repositori és '${{ vars.VARIABLE_1 }}'"
-      - run: echo "🐧 Valor de la variable de Workflow és '${{ env.VARIABLE_2 }}'"
-      - run: echo "🐧 Valor de la variable de Workflow és '${{ env.VARIABLE_2 }}'"
-        env: 
-          VARIABLE_2: Variable de tasca
+      - name: Checkout del repositori
+        uses: actions/checkout@v4
+      
+      - name: Instal·la unzip
+        run: sudo apt-get install unzip
+        
+      - name: Descomprimeix el fitxer zip
+        run: unzip -P ${{ secrets.ZIP_PASSWORD }} secret.zip
+        
+      - name: Mostra el contingut de secret.txt
+        run: cat secret.txt
