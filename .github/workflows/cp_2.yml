@@ -1,0 +1,21 @@
+name: Cas pràctic 2
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches: [ main ]
+env:
+  VARIABLE_2: Això és una variable de WF
+jobs:
+  Puja-Arxiu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload output file
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-log-file
+          path: output.log
+  Mostra-Arxiu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostra arxiu
+        run: cat ${{ output-log-file }}
