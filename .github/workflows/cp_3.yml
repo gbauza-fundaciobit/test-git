@@ -1,0 +1,18 @@
+name: Cas pràctic 3
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push, pull_request]
+jobs:
+  push_o_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executa accions per push a main
+        if: ${{ github.event_name == 'push' && github.base_ref == 'refs/heads/main'}}
+        run: echo "Aquesta passa s'executa només en fer push a la branca principal."
+
+      - name: Executa accions per a pull request
+        if: ${{ github.event_name == 'pull_request' }}
+        run: echo "Aquesta passa s'executa només per a pull requests, independentment de la branca."
+
+      - name: Executa accions per a pull request a main
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        run: echo "Aquesta passa s'executa només per a pull requests dirigides a la branca principal."
